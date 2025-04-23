@@ -29,4 +29,61 @@ processos de extração, analise, validação e gerenciamento.
 e finalizou informando a pesquisa para o desenvolvimento de um sistema de emprestimos, com a entrevista com o o "cliente".
 
 
+****
+
+22/04/2025
+
+**Aula 06**
+
+o professor, esta ensinando a fazer o diagrama de caso de uso.
+
+@startuml
+'https://plantuml.com/sequence-diagram'
+
+left to right direction
+
+actor cli as "cliente"
+actor adm as "administrador"
+actor lim as "limpeza"
+actor man as "manutencao"
+
+rectangle "Sistema reserva de quadra"{
+  usecase "consultar calendario" as cu01
+  usecase "buscar reserva" as cu02
+  usecase "realizar reserva" as cu03
+  usecase "verificar disponibilidade" as cu04
+  usecase "cancelar reserva" as cu05
+  usecase "gerenciar todas as reservas" as cu06
+  usecase "cadastrar quadra" as cu07
+  usecase "status reserva" as cu08 
+  usecase "Gerenciar limpeza" as cu09
+  usecase "status limpeza" as cu10
+
+
+  cu03 .> cu04 : <<include>>
+  cu05 <. cu02 : <<extends>>
+}
+
+cli --> cu01
+cli --> cu02
+cli --> cu03
+cli --> cu04
+cli --> cu05
+
+adm --|> cli
+adm --|> lim
+adm --|> man
+adm --> cu06
+adm --> cu07
+
+lim --> cu01
+lim --> cu09
+lim --> cu10
+
+man --> cu01
+man --> cu04
+@enduml
+
+****
+
 
