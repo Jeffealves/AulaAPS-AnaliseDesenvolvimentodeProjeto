@@ -85,5 +85,8 @@ man --> cu04
 @enduml
 
 ****
+Aula 29/04/2025
 
+Nesta Aula nos demos sequancia no projeto e colocamos em pratica o conceito para levantamento e documentação dos requisitos para que 
+quando nós programadores colocarmos em produção, possamos executar de forma direta e completa. 
 
